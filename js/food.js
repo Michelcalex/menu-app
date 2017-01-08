@@ -1,7 +1,4 @@
-console.log('I am working food');
-
-let menuItems = [];
-
+let menu = require('./menu');
 
 function getFoods() {
     let submitBtn = document.querySelector('#submit-btn');
@@ -17,23 +14,8 @@ function getFoods() {
             price: 'Price: $' + foodPrice.value,
         };
         
-        menuItems.push(newItem);
-
-        let menuList = document.querySelector('#menu-list');
-        let item = document.createElement('li');
-        for (let i = 0; i < menuItems.length; i++) {
-
-            item.innerHTML = Mustache.render (
-                document.querySelector('#food-list-template').innerHTML, 
-                {
-                    name: menuItems[i].name, 
-                    description: menuItems[i].description,
-                    price: menuItems[i].price,
-                }
-            );
-
-            menuList.appendChild(item);
-        }
+        menu.addItem(newItem);
+        menu.showMenu();
 
         foodName.value = '';
         foodDescription.value = '';
@@ -41,11 +23,9 @@ function getFoods() {
     });
 }
 
-console.log(menuItems);
-
-module.exports = getFoods;
-
-
+module.exports = {
+    getFoods: getFoods,
+};
 
 
 // ***********Manipulating DOM 

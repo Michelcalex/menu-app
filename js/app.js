@@ -5,8 +5,6 @@ let food = require('./food');
 let menu = require('./menu');
 let search = require('./search');
 
-
-
 window.addEventListener('load', function() {
     console.log('I am working');
 
@@ -25,5 +23,6 @@ window.addEventListener('load', function() {
         createMenuSection.classList.add('hidden');
     });
 
-    food();
+    food.getFoods();
+    menu.showMenu();
 });

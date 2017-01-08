@@ -6,8 +6,6 @@ let food = require('./food');
 let menu = require('./menu');
 let search = require('./search');
 
-
-
 window.addEventListener('load', function() {
     console.log('I am working');
 
@@ -26,13 +24,13 @@ window.addEventListener('load', function() {
         createMenuSection.classList.add('hidden');
     });
 
-    food();
+    food.getFoods();
+    menu.showMenu();
 });
 },{"./food":2,"./menu":3,"./search":4}],2:[function(require,module,exports){
 console.log('I am working food');
 
-let menuItems = [];
-
+let menu = require('./menu');
 
 function getFoods() {
     let submitBtn = document.querySelector('#submit-btn');
@@ -48,23 +46,8 @@ function getFoods() {
             price: 'Price: $' + foodPrice.value,
         };
         
-        menuItems.push(newItem);
-
-        let menuList = document.querySelector('#menu-list');
-        let item = document.createElement('li');
-        for (let i = 0; i < menuItems.length; i++) {
-
-            item.innerHTML = Mustache.render (
-                document.querySelector('#food-list-template').innerHTML, 
-                {
-                    name: menuItems[i].name, 
-                    description: menuItems[i].description,
-                    price: menuItems[i].price,
-                }
-            );
-
-            menuList.appendChild(item);
-        }
+        menu.addItem(newItem);
+        menu.showMenu();
 
         foodName.value = '';
         foodDescription.value = '';
@@ -72,11 +55,9 @@ function getFoods() {
     });
 }
 
-console.log(menuItems);
-
-module.exports = getFoods;
-
-
+module.exports = {
+    getFoods: getFoods,
+};
 
 
 // ***********Manipulating DOM 
@@ -107,8 +88,39 @@ module.exports = getFoods;
 //         foodPrice.value= '';
 //     });
 // }
-},{}],3:[function(require,module,exports){
+},{"./menu":3}],3:[function(require,module,exports){
 console.log('I am working menu');
+
+let items = [];
+
+function showMenu() {
+    let menuList = document.querySelector('#menu-list');
+
+    let item = document.createElement('li');
+    for (let i = 0; i < items.length; i++) {
+        item.innerHTML = Mustache.render (
+            document.querySelector('#food-list-template').innerHTML, 
+            {
+                name: items[i].name, 
+                description: items[i].description,
+                price: items[i].price,
+            }
+        );
+
+        menuList.appendChild(item);
+    }
+}
+
+function addItem(itemToAdd) {
+    items.push(itemToAdd);
+}
+
+module.exports = {
+    items: items,
+    addItem: addItem,
+    showMenu: showMenu
+};
+
 },{}],4:[function(require,module,exports){
 console.log('I am working search');
 },{}]},{},[1]);
