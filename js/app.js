@@ -25,4 +25,5 @@ window.addEventListener('load', function() {
         createMenuSection.classList.add('hidden');
     });
 
+    food();
 });
