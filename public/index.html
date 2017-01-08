@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/oj.mustache/0.7.2/oj.mustache.min.js"></script>
     <script src="app.js"></script>
+    <script id="food-list-template" type="x-mustache-template">
+        <p>{{ name }}</p>
+        <p>{{ description }}</p>
+        <p>{{ price }}</p>
+    </script>
 </head>
 <body>
     <header>
@@ -24,7 +29,7 @@
             <div>Search feature goes here</div>
             <div>Showing the food items here with JS/DOM</div>
         </section>
-        <section id="create-menu">
+        <section id="create-menu" class="hidden">
             <h2>What's cooking??</h2>
             <form>
                 Name of food:<br>
@@ -34,7 +39,7 @@
                 Price:<br>
                 <input type="name" name="quantity" min='1.00' max='50.00'><br>
             </form>
-
+]
         </section>
     </main>
     <footer>
