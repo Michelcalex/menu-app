@@ -25,4 +25,5 @@ window.addEventListener('load', function() {
 
     food.getFoods();
     menu.showMenu();
+    search.search();
 });

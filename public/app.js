@@ -26,10 +26,9 @@ window.addEventListener('load', function() {
 
     food.getFoods();
     menu.showMenu();
+    search.search();
 });
 },{"./food":2,"./menu":3,"./search":4}],2:[function(require,module,exports){
-console.log('I am working food');
-
 let menu = require('./menu');
 
 function getFoods() {
@@ -89,8 +88,6 @@ module.exports = {
 //     });
 // }
 },{"./menu":3}],3:[function(require,module,exports){
-console.log('I am working menu');
-
 let items = [];
 
 function showMenu() {
@@ -122,5 +119,22 @@ module.exports = {
 };
 
 },{}],4:[function(require,module,exports){
-console.log('I am working search');
+// Steps:
+// *pt 1: whenever someone types in the text box* - look into the 'keyup' event
+// *pt 2: figure out which elements 'match'* - look through your array, and filter 
+//        (literally or figuratively) to a subset of the items where the string in the text box is 
+//        present in the food's name. you can find if a string exists in another string using `indexOf` 
+//        or `includes`
+// *pt 3: render a subset of the foods* - i'd suggest clearing out all foods from the DOM and re-rendering 
+//        using the array from pt 2 (NOT the full array - then nothing hides!)
+
+function search() {
+    let searchBar = document.querySelector('#search-bar');
+    let result = searchBar.textContent = searchBar.value;
+    console.log(result);
+}
+
+module.exports = {
+    search: search,
+};
 },{}]},{},[1]);
