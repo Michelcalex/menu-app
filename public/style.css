@@ -1175,21 +1175,39 @@ button {
     margin-right: 0;
     float: left; } }
 
-body header {
-  background-color: lightgreen; }
-  body header ul {
-    list-style: none; }
-    body header ul li {
-      display: inline-block; }
+body {
+  color: #1E2732; }
 
-body main #show-menu {
-  background-color: lightblue; }
+button {
+  border-radius: 5px; }
 
-body main #create-menu {
-  background-color: lightpink; }
-
-body main .hidden {
+.hidden {
   display: none; }
 
-footer {
-  background-color: lightslategrey; }
+header {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #DCD9C8;
+  max-width: 100%; }
+  header::before, header::after {
+    content: ' ';
+    display: table; }
+  header::after {
+    clear: both; }
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%; }
+    header nav #logo-nav {
+      display: flex;
+      align-items: center; }
+      header nav #logo-nav img {
+        padding: 0 10px; }
+      header nav #logo-nav h1 {
+        color: #2B3B4C; }
+    header nav #right-nav button {
+      background-color: #2B3B4C;
+      color: #FFFEF7;
+      padding: 10px; }

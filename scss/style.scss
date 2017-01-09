@@ -3,36 +3,36 @@
 @include foundation-global-styles;
 @include foundation-grid;
 
+
+$text-primary-color: #1E2732;
+$text-secondary-color: #2B3B4C;
+$text-highlight-color: #FF6F4F;
+
+$background-primary-color: #2B3B4C;
+$background-secondary-color: #FFFEF7;
+
+$navigation-background-color: #DCD9C8;
+
+$button-background-color: #2B3B4C;
+$button-text-color: #FFFEF7;
+
+
 body {
-
-    header {
-        background-color: lightgreen;
-
-        ul {
-            list-style: none;
-
-            li {
-                display: inline-block;
-            }
-        }
-    }
-
-    main {
-        
-        #show-menu {
-            background-color: lightblue;
-        }
-
-        #create-menu {
-            background-color: lightpink;  
-        }
-
-        .hidden {
-            display: none;
-        }
-    }
+    color: $text-primary-color;
 }
 
-footer {
-    background-color: lightslategrey;
+button {
+    border-radius: 5px;
 }
+
+.hidden{
+    display: none;
+}
+
+
+
+
+@import 'partials/header';
+@import 'partials/menu';
+@import 'partials/createmenu';
+@import 'partials/footer';
