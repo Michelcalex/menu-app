@@ -25,8 +25,8 @@ window.addEventListener('load', function() {
     });
 
     food.getFoods();
-    menu.showMenu();
-    search.search();
+    menu.showMenu(menu.items);
+    search.searchBox();
 });
 },{"./food":2,"./menu":3,"./search":4}],2:[function(require,module,exports){
 let menu = require('./menu');
@@ -46,7 +46,7 @@ function getFoods() {
         };
         
         menu.addItem(newItem);
-        menu.showMenu();
+        menu.showMenu(menu.items);
 
         foodName.value = '';
         foodDescription.value = '';
@@ -90,17 +90,19 @@ module.exports = {
 },{"./menu":3}],3:[function(require,module,exports){
 let items = [];
 
-function showMenu() {
+function showMenu(param) {
+    console.log(param);
     let menuList = document.querySelector('#menu-list');
-
-    let item = document.createElement('li');
-    for (let i = 0; i < items.length; i++) {
+    menuList.innerHTML='';
+    
+    for (let i = 0; i < param.length; i++) {
+        let item = document.createElement('li');
         item.innerHTML = Mustache.render (
             document.querySelector('#food-list-template').innerHTML, 
             {
-                name: items[i].name, 
-                description: items[i].description,
-                price: items[i].price,
+                name: param[i].name, 
+                description: param[i].description,
+                price: param[i].price,
             }
         );
 
@@ -128,13 +130,31 @@ module.exports = {
 // *pt 3: render a subset of the foods* - i'd suggest clearing out all foods from the DOM and re-rendering 
 //        using the array from pt 2 (NOT the full array - then nothing hides!)
 
-function search() {
+let menu = require('./menu');
+
+
+function searchBox() {
     let searchBar = document.querySelector('#search-bar');
-    let result = searchBar.textContent = searchBar.value;
-    console.log(result);
+
+    searchBar.addEventListener('keyup', function() {
+    let keepers = [];
+
+    for(let i = 0;i < menu.items.length; i++) {
+        let foodName = menu.items[i].name.toLowerCase();
+        let searchTerm = searchBar.value.toLowerCase();
+        
+        if(foodName.includes(searchTerm)) {
+            keepers.push(menu.items[i]);
+        }
+    }
+    menu.showMenu(keepers);
+});
 }
 
+
+
+
 module.exports = {
-    search: search,
+    searchBox: searchBox,
 };
-},{}]},{},[1]);
+},{"./menu":3}]},{},[1]);

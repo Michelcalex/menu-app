@@ -24,6 +24,6 @@ window.addEventListener('load', function() {
     });
 
     food.getFoods();
-    menu.showMenu();
-    search.search();
+    menu.showMenu(menu.items);
+    search.searchBox();
 });

@@ -1,16 +1,18 @@
 let items = [];
 
-function showMenu() {
+function showMenu(param) {
+    console.log(param);
     let menuList = document.querySelector('#menu-list');
-
-    let item = document.createElement('li');
-    for (let i = 0; i < items.length; i++) {
+    menuList.innerHTML='';
+    
+    for (let i = 0; i < param.length; i++) {
+        let item = document.createElement('li');
         item.innerHTML = Mustache.render (
             document.querySelector('#food-list-template').innerHTML, 
             {
-                name: items[i].name, 
-                description: items[i].description,
-                price: items[i].price,
+                name: param[i].name, 
+                description: param[i].description,
+                price: param[i].price,
             }
         );
 

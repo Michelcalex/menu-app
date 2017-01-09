@@ -7,12 +7,30 @@
 // *pt 3: render a subset of the foods* - i'd suggest clearing out all foods from the DOM and re-rendering 
 //        using the array from pt 2 (NOT the full array - then nothing hides!)
 
-function search() {
+let menu = require('./menu');
+
+
+function searchBox() {
     let searchBar = document.querySelector('#search-bar');
-    let result = searchBar.textContent = searchBar.value;
-    console.log(result);
+
+    searchBar.addEventListener('keyup', function() {
+    let keepers = [];
+
+    for(let i = 0;i < menu.items.length; i++) {
+        let foodName = menu.items[i].name.toLowerCase();
+        let searchTerm = searchBar.value.toLowerCase();
+        
+        if(foodName.includes(searchTerm)) {
+            keepers.push(menu.items[i]);
+        }
+    }
+    menu.showMenu(keepers);
+});
 }
 
+
+
+
 module.exports = {
-    search: search,
+    searchBox: searchBox,
 };

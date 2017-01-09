@@ -15,7 +15,7 @@ function getFoods() {
         };
         
         menu.addItem(newItem);
-        menu.showMenu();
+        menu.showMenu(menu.items);
 
         foodName.value = '';
         foodDescription.value = '';
