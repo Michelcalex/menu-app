@@ -38,6 +38,14 @@
                 width: 25%;
                 margin: 20px;
                 border-radius: $border-radius;
+
+                .name-food {
+                    font-weight: bold;
+                }
+
+                .name-description {
+                    font-style: italic;
+                }
             }
         }
     }

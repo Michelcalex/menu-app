@@ -1286,6 +1286,10 @@ header {
           padding-right: 0.9375rem; } }
       #show-menu div ul li:last-child:not(:first-child) {
         float: right; }
+      #show-menu div ul li .name-food {
+        font-weight: bold; }
+      #show-menu div ul li .name-description {
+        font-style: italic; }
 
 #create-menu {
   text-align: center; }
