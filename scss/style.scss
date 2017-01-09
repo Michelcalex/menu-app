@@ -11,9 +11,10 @@ $text-highlight-secondary-color: #FFFEF7;
 
 $heading-font: 'Frijole', cursive;
 $sub-heading-font: 'Frijole', cursive;
+$primary-text-font: 'Armata', sans-serif;
 
 $background-primary-color: #2B3B4C;
-$background-secondary-color: #FFFEF7;
+$background-secondary-color: #DCD9C8;
 
 $navigation-background-color: #DCD9C8;
 
@@ -26,6 +27,7 @@ $border-radius: 5px;
 
 body {
     color: $text-primary-color;
+    font-family: $primary-text-font;
 }
 
 button {
@@ -34,6 +36,18 @@ button {
 
 .hidden{
     display: none;
+}
+
+h2 {
+    @include grid-row();
+    max-width: 100%;
+    color: $text-highlight-color;
+    text-align: center;
+    padding: 50px 0px;
+    margin: 0;
+    font-family: $sub-heading-font;
+    font-weight: normal;
+    font-size: 1.8em;
 }
 
 

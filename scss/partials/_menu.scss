@@ -1,16 +1,4 @@
 #show-menu {
-    text-align: center;
-
-    h2{
-        @include grid-row();
-        background-color: white;
-        color: $text-highlight-color;
-        text-align: center;
-        padding: 50px 0px;
-        max-width: 100%;
-        margin: 0;
-        
-    }
 
     div {
         @include grid-row();
@@ -20,10 +8,13 @@
         h3{
             text-align: center;
             color: $text-highlight-secondary-color;
+            font-family: $sub-heading-font;
+            font-size: 1.6em;
+            margin-bottom: 0px;
         }
 
         #search-container {
-            text-align: right;
+            text-align: center;
             padding: 2%;
 
             #search-btn {
@@ -40,7 +31,6 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            text-align: left;
 
             li {
                 @include grid-column(4);
@@ -48,10 +38,6 @@
                 width: 25%;
                 margin: 20px;
                 border-radius: $border-radius;
-            }
-
-            li:last-child:not(:first-child) {
-                float:none;
             }
         }
     }
