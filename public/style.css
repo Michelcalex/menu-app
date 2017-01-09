@@ -1206,7 +1206,8 @@ header {
       header nav #logo-nav img {
         padding: 0 10px; }
       header nav #logo-nav h1 {
-        color: #2B3B4C; }
+        color: #2B3B4C;
+        font-family: "Frijole", cursive; }
     header nav #right-nav button {
       background-color: #2B3B4C;
       color: #FFFEF7;
@@ -1218,8 +1219,12 @@ header {
     max-width: 75rem;
     margin-left: auto;
     margin-right: auto;
+    background-color: white;
     color: #FF6F4F;
-    text-align: center; }
+    text-align: center;
+    padding: 50px 0px;
+    max-width: 100%;
+    margin: 0; }
     #show-menu h2::before, #show-menu h2::after {
       content: ' ';
       display: table; }
@@ -1236,6 +1241,9 @@ header {
       display: table; }
     #show-menu div::after {
       clear: both; }
+    #show-menu div h3 {
+      text-align: center;
+      color: #FFFEF7; }
     #show-menu div #search-container {
       text-align: right;
       padding: 2%; }
@@ -1243,9 +1251,6 @@ header {
         background-color: #FF6F4F;
         color: #FFFEF7;
         border-radius: 5px; }
-    #show-menu div h3 {
-      text-align: center;
-      color: #FFFEF7; }
     #show-menu div ul {
       max-width: 75rem;
       margin-left: auto;
@@ -1278,3 +1283,51 @@ header {
           float: right; }
       #show-menu div ul li:last-child:not(:first-child) {
         float: none; }
+
+#create-menu {
+  text-align: center; }
+  #create-menu h2 {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    color: #FF6F4F;
+    text-align: center;
+    padding: 50px 0px;
+    max-width: 100%;
+    margin: 0; }
+    #create-menu h2::before, #create-menu h2::after {
+      content: ' ';
+      display: table; }
+    #create-menu h2::after {
+      clear: both; }
+  #create-menu div {
+    background-color: #2B3B4C;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 60px;
+    border-radius: 5px; }
+  #create-menu form {
+    background-color: #FFFEF7;
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 5px; }
+    #create-menu form #submit-btn {
+      background-color: #FF6F4F;
+      color: #FFFEF7;
+      border-radius: 5px;
+      margin-top: 10px; }
+
+footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 75px;
+  width: 100%;
+  background-color: #DCD9C8;
+  font-size: 12px;
+  text-align: center;
+  padding: 20px 0px; }
+  footer p {
+    margin: 2px 0px; }

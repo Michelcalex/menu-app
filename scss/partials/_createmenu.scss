@@ -1,0 +1,36 @@
+#create-menu {
+    text-align: center;
+
+    h2 {
+        @include grid-row();
+        background-color: white;
+        color: $text-highlight-color;
+        text-align: center;
+        padding: 50px 0px;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    div {
+        background-color: $background-primary-color;
+        max-width: 75rem;
+        margin: 0 auto;
+        padding: 60px;
+        border-radius: $border-radius;
+    }
+
+    form {
+        background-color: $background-secondary-color;
+        max-width: 50%;
+        margin: 0 auto;
+        padding: 10px;
+        border-radius: $border-radius;
+
+        #submit-btn {
+            background-color: $button-background-secondary-color;
+            color: $button-text-color;
+            border-radius: $border-radius;
+            margin-top: 10px;
+        }
+    }
+}

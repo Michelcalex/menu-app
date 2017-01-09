@@ -3,14 +3,24 @@
 
     h2{
         @include grid-row();
+        background-color: white;
         color: $text-highlight-color;
         text-align: center;
+        padding: 50px 0px;
+        max-width: 100%;
+        margin: 0;
+        
     }
 
     div {
         @include grid-row();
         background-color: $background-primary-color;
         border-radius: $border-radius;
+
+        h3{
+            text-align: center;
+            color: $text-highlight-secondary-color;
+        }
 
         #search-container {
             text-align: right;
@@ -21,11 +31,6 @@
                 color: $button-text-color;
                 border-radius: $border-radius;
             }
-        }
-
-        h3{
-            text-align: center;
-            color: $text-highlight-secondary-color;
         }
 
         ul {
