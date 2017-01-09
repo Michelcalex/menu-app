@@ -1,0 +1,53 @@
+#show-menu {
+    text-align: center;
+
+    h2{
+        @include grid-row();
+        color: $text-highlight-color;
+        text-align: center;
+    }
+
+    div {
+        @include grid-row();
+        background-color: $background-primary-color;
+        border-radius: $border-radius;
+
+        #search-container {
+            text-align: right;
+            padding: 2%;
+
+            #search-btn {
+                background-color: $button-background-secondary-color;
+                color: $button-text-color;
+                border-radius: $border-radius;
+            }
+        }
+
+        h3{
+            text-align: center;
+            color: $text-highlight-secondary-color;
+        }
+
+        ul {
+            @include grid-row();
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            text-align: left;
+
+            li {
+                @include grid-column(4);
+                background-color: $background-secondary-color;
+                width: 25%;
+                margin: 20px;
+                border-radius: $border-radius;
+            }
+
+            li:last-child:not(:first-child) {
+                float:none;
+            }
+        }
+    }
+}

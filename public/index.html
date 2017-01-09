@@ -29,12 +29,14 @@
     <main>
         <section id="show-menu">
             <h2>Get your grub on!</h2>
-            <input type="text" placeholder="Search..." id="search-bar" maxlength="25" autocomplete="on">
-            <input type="button" value="submit" id="search-btn">
-            <h3>Menu</h3>
-            <ul id="menu-list">
-                
-            </ul>
+            <div>
+                <div id="search-container">
+                    <input type="text" placeholder="Search..." id="search-bar" maxlength="25" autocomplete="on">
+                    <input type="button" value="submit" id="search-btn">
+                </div>
+                <h3>Menu</h3>
+                <ul id="menu-list"></ul>
+            </div>
         </section>
         <section id="create-menu" class="hidden">
             <h2>What's cooking??</h2>
@@ -44,7 +46,7 @@
                 Description:<br>
                 <input type="text" name="food-description" id="food-description"><br>
                 Price:<br>
-                <input type="number" name="quantity" min='1.00' max='50.00' id="price"><br>
+                <input type="number" name="quantity" id="price"><br>
                 <input type="button" value="submit" id="submit-btn">
             </form>
         </section>

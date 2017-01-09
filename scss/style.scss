@@ -7,6 +7,7 @@
 $text-primary-color: #1E2732;
 $text-secondary-color: #2B3B4C;
 $text-highlight-color: #FF6F4F;
+$text-highlight-secondary-color: #FFFEF7;
 
 $background-primary-color: #2B3B4C;
 $background-secondary-color: #FFFEF7;
@@ -14,7 +15,10 @@ $background-secondary-color: #FFFEF7;
 $navigation-background-color: #DCD9C8;
 
 $button-background-color: #2B3B4C;
+$button-background-secondary-color: #FF6F4F;
 $button-text-color: #FFFEF7;
+
+$border-radius: 5px;
 
 
 body {
@@ -22,7 +26,7 @@ body {
 }
 
 button {
-    border-radius: 5px;
+    border-radius: $border-radius;
 }
 
 .hidden{
